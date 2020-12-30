@@ -1,8 +1,11 @@
+{% load static %} 
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
 {% if latest_questions %}
 <ul>
   {% for q in latest_questions %}
   <li>
-  {% comment %} url is looked up, allowing changes to be made in one place {% endcomment %}
     <a href="{% url 'polls:detail' q.id %}">{{q.question_text}}</a>
   </li>
   {% endfor %}
