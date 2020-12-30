@@ -12,9 +12,10 @@ class ChoiceInLine(
 
 
 class QuestionAdmin(admin.ModelAdmin):
+
     fieldsets = [
-        ("Question Content", {"fields": ["question_text"]}),
         ("Date Information", {"fields": ["pub_date"], "classes": ["collapse"]}),
+        ("Question Content", {"fields": ["question_text"]}),
     ]
 
     inlines = [ChoiceInLine]  # enable choices to be edited from Question
